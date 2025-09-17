@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { client } from "../../lib";
+import { Link } from "react-router";
 
 export const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -62,9 +63,9 @@ export const Countries = () => {
           >
 
             <div className="p-5">
-              <h2 className="font-extrabold text-indigo-600 text-lg mb-3">
+              <Link to={`/countries/${item.name.common}`} className="font-extrabold text-indigo-600 text-lg mb-3">
                 {item.name.common}
-              </h2>
+              </Link>
               <p className="text-sm text-gray-700">
                 <span className="font-semibold">Population:</span>{" "}
                 {item.population.toLocaleString()}
